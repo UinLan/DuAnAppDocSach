@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".objec.objec.MainActivity">
 
 
     <RelativeLayout
@@ -12,15 +12,26 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:background="#363f44">
-
+        <EditText
+            android:background="@drawable/bg_edt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp"
+            android:hint="Nhập tên sách cần tìm"
+            android:textColorHint="#B3ADAD"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#fff">
+        </EditText>
     </RelativeLayout>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginLeft="80dp">
-    </EditText>
+<GridView
+    android:id="@+id/gdvDSSach"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:numColumns="3"
+    android:layout_marginTop="80dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
