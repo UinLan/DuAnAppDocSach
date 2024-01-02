@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center"
-        android:background="#363f44">
+        android:background="#363f44"
+        tools:ignore="MissingConstraints">
         <EditText
             android:background="@drawable/bg_edt"
             android:layout_width="match_parent"
