@@ -27,7 +27,23 @@ public class DocSachAdapter extends ArrayAdapter<DocSach> {
         this.ct =context;
         this.arr = new ArrayList<>(objects);
     }
-
+public void sortSach(String s)
+{
+    s=s.toUpperCase();
+    int k =0;
+    for(int i=0;i<arr.size();i++)
+    {
+        DocSach d =arr.get(i);
+        String ten = d.getTenSach().toUpperCase();
+        if(ten.indexOf(s)>=0)
+        {
+            arr.set(i,arr.get(k));
+            arr.set(k,d);
+            k++;
+        }
+    }
+    notifyDataSetChanged();
+}
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

@@ -1,9 +1,27 @@
 package com.example.duanappdocsach.objec.objec;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.jar.JarException;
+
 public class DocSach {
     private String tenSach,linkAnh;
+    /*
+    {
+    "tenSach":"",
+    "linkAnh":""
+    }
+     */
     public DocSach()
     {}
+    public DocSach(JSONObject o) throws JSONException
+    {
+        tenSach = o.getString("tenSach");
+        linkAnh = o.getString("linkAnh");
+
+
+    }
     public DocSach(String tenSach, String linkAnh) {
         this.tenSach = tenSach;
         this.linkAnh = linkAnh;
