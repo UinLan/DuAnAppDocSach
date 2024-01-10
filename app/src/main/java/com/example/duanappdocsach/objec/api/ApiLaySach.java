@@ -23,7 +23,9 @@ public class ApiLaySach extends AsyncTask<Void,Void,Void> {
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(" http://192.168.1.16:3000/books")
+                //.url(" http://192.168.1.16:3000/books")
+                .url(" https://uinlan.000webhostapp.com/laySach.php")
+
                 .build();
         data = null;
         try

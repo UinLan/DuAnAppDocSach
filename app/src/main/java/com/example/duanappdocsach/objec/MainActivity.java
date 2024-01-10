@@ -1,11 +1,14 @@
-package com.example.duanappdocsach.objec.objec;
+package com.example.duanappdocsach.objec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -14,6 +17,7 @@ import com.example.duanappdocsach.R;
 import com.example.duanappdocsach.objec.adapter.DocSachAdapter;
 import com.example.duanappdocsach.objec.api.ApiLaySach;
 import com.example.duanappdocsach.objec.interfaces.LaySachVe;
+import com.example.duanappdocsach.objec.objec.DocSach;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -71,6 +75,17 @@ EditText edtTimKiem;
 
             }
         });
+        gdvDSSach.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                DocSach docSach = docSachArrayList.get(i);
+                Bundle b = new Bundle();
+                b.putSerializable("sach",docSach);
+                Intent intent = new Intent(MainActivity.this,InformationActivity.class);
+                intent.putExtra("data",b);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -82,11 +97,13 @@ EditText edtTimKiem;
     public void ketThuc(String data) {
     try {
         JSONArray arr = new JSONArray(data);
+        docSachArrayList.clear(); // Xóa dữ liệu cũ
         for(int i = 0;i<arr.length();i++)
         {
             JSONObject o = arr.getJSONObject(i);
             docSachArrayList.add(new DocSach(o));
         }
+        adapter.notifyDataSetChanged(); // Thông báo cho adapter biết dữ liệu đã thay đổi
         adapter = new DocSachAdapter(this,0,docSachArrayList);
         gdvDSSach.setAdapter(adapter);
 
@@ -96,5 +113,9 @@ EditText edtTimKiem;
     @Override
     public void biLoi() {
         Toast.makeText(this,"Loi Ket Noi",Toast.LENGTH_SHORT).show();
+    }
+
+    public void update(View view) {
+        new ApiLaySach(this).execute();
     }
 }

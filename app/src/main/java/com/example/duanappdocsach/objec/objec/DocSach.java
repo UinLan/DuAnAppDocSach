@@ -3,9 +3,10 @@ package com.example.duanappdocsach.objec.objec;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.jar.JarException;
 
-public class DocSach {
+public class DocSach implements Serializable {
     private String tenSach,linkAnh;
     /*
     {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".objec.objec.MainActivity">
+    tools:context=".objec.MainActivity">
 
 
     <RelativeLayout
@@ -13,6 +13,14 @@
         android:gravity="center"
         android:background="#363f44"
         tools:ignore="MissingConstraints">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/update"
+            app:tint="#fff"
+            android:layout_alignParentRight="true"
+            android:onClick="update"/>
         <EditText
             android:id="@+id/edtTimKiem"
             android:background="@drawable/bg_edt"
