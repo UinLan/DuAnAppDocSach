@@ -14,22 +14,21 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.duanappdocsach.R;
-import com.example.duanappdocsach.objec.adapter.DocSachAdapter;
+import com.example.duanappdocsach.objec.adapter.SachAdapter;
 import com.example.duanappdocsach.objec.api.ApiLaySach;
 import com.example.duanappdocsach.objec.interfaces.LaySachVe;
-import com.example.duanappdocsach.objec.objec.DocSach;
+import com.example.duanappdocsach.objec.objec.Sach;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.jar.JarException;
 
 public class MainActivity extends AppCompatActivity implements LaySachVe {
 GridView gdvDSSach;
-DocSachAdapter adapter;
-ArrayList<DocSach> docSachArrayList;
+SachAdapter adapter;
+ArrayList<Sach> docSachArrayList;
 EditText edtTimKiem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ EditText edtTimKiem;
     private void  init(){
     docSachArrayList = new ArrayList<>();
 
-        adapter = new DocSachAdapter(this,0,docSachArrayList);
+        adapter = new SachAdapter(this,0,docSachArrayList);
     }
     private void  anhXa(){
 
@@ -78,10 +77,10 @@ EditText edtTimKiem;
         gdvDSSach.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                DocSach docSach = docSachArrayList.get(i);
+                Sach docSach = docSachArrayList.get(i);
                 Bundle b = new Bundle();
                 b.putSerializable("sach",docSach);
-                Intent intent = new Intent(MainActivity.this,InformationActivity.class);
+                Intent intent = new Intent(MainActivity.this, ChuongActivity.class);
                 intent.putExtra("data",b);
                 startActivity(intent);
             }
@@ -101,10 +100,10 @@ EditText edtTimKiem;
         for(int i = 0;i<arr.length();i++)
         {
             JSONObject o = arr.getJSONObject(i);
-            docSachArrayList.add(new DocSach(o));
+            docSachArrayList.add(new Sach(o));
         }
         adapter.notifyDataSetChanged(); // Thông báo cho adapter biết dữ liệu đã thay đổi
-        adapter = new DocSachAdapter(this,0,docSachArrayList);
+        adapter = new SachAdapter(this,0,docSachArrayList);
         gdvDSSach.setAdapter(adapter);
 
     }catch (JSONException e){}

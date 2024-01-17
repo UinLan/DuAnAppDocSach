@@ -8,21 +8,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.bumptech.glide.Glide;
 import com.example.duanappdocsach.R;
-import com.example.duanappdocsach.objec.objec.DocSach;
+import com.example.duanappdocsach.objec.objec.Sach;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DocSachAdapter extends ArrayAdapter<DocSach> {
+public class SachAdapter extends ArrayAdapter<Sach> {
     private  Context ct;
-    private ArrayList<DocSach> arr;
+    private ArrayList<Sach> arr;
 
-    public DocSachAdapter(@NonNull Context context, int resource, @NonNull List<DocSach> objects) {
+    public SachAdapter( Context context, int resource, List<Sach> objects) {
         super(context, resource, objects);
         this.ct =context;
         this.arr = new ArrayList<>(objects);
@@ -33,7 +30,7 @@ public void sortSach(String s)
     int k =0;
     for(int i=0;i<arr.size();i++)
     {
-        DocSach d =arr.get(i);
+        Sach d =arr.get(i);
         String ten = d.getTenSach().toUpperCase();
         if(ten.indexOf(s)>=0)
         {
@@ -44,16 +41,15 @@ public void sortSach(String s)
     }
     notifyDataSetChanged();
 }
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position,  View convertView,  ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) ct.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.item_sach, null);
         }
         if (arr.size()>0)
         {
-            DocSach docSach = this.arr.get(position);
+            Sach docSach = this.arr.get(position);
             TextView tenTenSach = convertView.findViewById(R.id.txvTenSach);
             ImageView imgAnhSach = convertView.findViewById(R.id.imgAnhSach);
             tenTenSach.setText(docSach.getTenSach());

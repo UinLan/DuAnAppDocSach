@@ -4,26 +4,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.util.jar.JarException;
 
-public class DocSach implements Serializable {
-    private String tenSach,linkAnh;
+public class Sach implements Serializable {
+    private String tenSach,linkAnh,id;
     /*
     {
     "tenSach":"",
     "linkAnh":""
     }
      */
-    public DocSach()
+    public Sach()
     {}
-    public DocSach(JSONObject o) throws JSONException
+    public Sach(JSONObject o) throws JSONException
     {
+        id = o.getString("id");
         tenSach = o.getString("tenSach");
         linkAnh = o.getString("linkAnh");
-
-
     }
-    public DocSach(String tenSach, String linkAnh) {
+    public Sach(String tenSach, String linkAnh) {
         this.tenSach = tenSach;
         this.linkAnh = linkAnh;
     }
@@ -42,5 +40,13 @@ public class DocSach implements Serializable {
 
     public void setLinkAnh(String linkAnh) {
         this.linkAnh = linkAnh;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

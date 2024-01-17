@@ -2,6 +2,7 @@ package com.example.duanappdocsach.objec.api;
 
 import android.os.AsyncTask;
 
+import com.example.duanappdocsach.objec.interfaces.LayChuongVe;
 import com.example.duanappdocsach.objec.interfaces.LaySachVe;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -10,24 +11,22 @@ import com.squareup.okhttp.ResponseBody;
 
 import java.io.IOException;
 
-public class ApiLaySach extends AsyncTask<Void,Void,Void> {
+public class ApiChuongSach extends AsyncTask<Void,Void,Void> {
     String data;
-
-    public ApiLaySach(LaySachVe laySachVe) {
-        this.laySachVe = laySachVe;
-        this.laySachVe.batDau();
+    LayChuongVe layChuongVe;
+    String idSach;
+    public ApiChuongSach(LayChuongVe layChuongVe, String idSach) {
+        this.layChuongVe = layChuongVe;
+        this.layChuongVe.batDau();
+        this.idSach = idSach;
     }
 
-    LaySachVe laySachVe;
+
     @Override
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                //.url(" http://192.168.1.16:3000/books")
-                .url(" https://uinlan.000webhostapp.com/laySach.php")
-
-
-
+                .url("https://uinlan.000webhostapp.com/layChuong.php?id="+idSach)
                 .build();
         data = null;
         try
@@ -45,11 +44,11 @@ public class ApiLaySach extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
    if(data == null)
    {
-       this.laySachVe.biLoi();
+       this.layChuongVe.biLoi();
    }
    else
    {
-       this.laySachVe.ketThuc(data);
+       this.layChuongVe.ketThuc(data);
    }
     }
 }
