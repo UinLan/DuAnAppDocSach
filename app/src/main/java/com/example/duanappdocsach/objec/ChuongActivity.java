@@ -2,8 +2,11 @@ package com.example.duanappdocsach.objec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -53,8 +56,6 @@ ChuongSachAdapter chuongSachAdapter;
         imgAnhSachs = findViewById(R.id.imgAnhSachs);
         txvTenSachs= findViewById(R.id.txvTenSachs);
         lsvDanhSachChuong= findViewById(R.id.lsvDanhSachChuong);
-
-
     }
     private void setUp(){
         txvTenSachs.setText(docSach.getTenSach());
@@ -62,7 +63,14 @@ ChuongSachAdapter chuongSachAdapter;
 
         //lsvDanhSachChuong.setAdapter(chuongSachAdapter);
     }
-    private void setClick(){}
+    private void setClick(){
+        lsvDanhSachChuong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            startActivity(new Intent(ChuongActivity.this,DocSachActivity.class));
+            }
+        });
+    }
 
     @Override
     public void batDau() {

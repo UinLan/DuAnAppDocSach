@@ -19,16 +19,14 @@ import java.util.List;
 public class ChuongSachAdapter extends ArrayAdapter<ChuongSach> {
     private Context ct;
     private ArrayList<ChuongSach> arr;
-    public ChuongSachAdapter(@NonNull Context context, int resource, @NonNull List<ChuongSach> objects) {
+    public ChuongSachAdapter( Context context, int resource, List<ChuongSach> objects) {
         super(context, resource, objects);
         this.ct =context;
         this.arr = new ArrayList<>(objects);
 
     }
-
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null)
         {
             LayoutInflater inflater = (LayoutInflater)ct.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

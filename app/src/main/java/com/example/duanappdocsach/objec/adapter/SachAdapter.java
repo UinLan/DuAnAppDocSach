@@ -32,8 +32,7 @@ public void sortSach(String s)
     {
         Sach d =arr.get(i);
         String ten = d.getTenSach().toUpperCase();
-        if(ten.indexOf(s)>=0)
-        {
+        if(ten.indexOf(s)>=0) {
             arr.set(i,arr.get(k));
             arr.set(k,d);
             k++;

@@ -40,7 +40,7 @@ EditText edtTimKiem;
         setClick();
         new ApiLaySach(this).execute();
     }
-    @SuppressLint("SuspiciousIndentation")
+    //@SuppressLint("SuspiciousIndentation")
     private void  init(){
     docSachArrayList = new ArrayList<>();
 
@@ -58,12 +58,12 @@ EditText edtTimKiem;
     private void  setClick(){
         edtTimKiem.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
 
@@ -71,16 +71,15 @@ EditText edtTimKiem;
             public void afterTextChanged(Editable editable) {
             String s = edtTimKiem.getText().toString();
             adapter.sortSach(s);
-
             }
         });
         gdvDSSach.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                Sach docSach = docSachArrayList.get(i);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Sach docsach = docSachArrayList.get(i);
                 Bundle b = new Bundle();
-                b.putSerializable("sach",docSach);
-                Intent intent = new Intent(MainActivity.this, ChuongActivity.class);
+                b.putSerializable("sach",docsach);
+                Intent intent = new Intent(MainActivity.this,ChuongActivity.class);
                 intent.putExtra("data",b);
                 startActivity(intent);
             }
@@ -95,14 +94,14 @@ EditText edtTimKiem;
     @Override
     public void ketThuc(String data) {
     try {
-        JSONArray arr = new JSONArray(data);
         docSachArrayList.clear(); // Xóa dữ liệu cũ
+        JSONArray arr = new JSONArray(data);
         for(int i = 0;i<arr.length();i++)
         {
             JSONObject o = arr.getJSONObject(i);
             docSachArrayList.add(new Sach(o));
         }
-        adapter.notifyDataSetChanged(); // Thông báo cho adapter biết dữ liệu đã thay đổi
+        //adapter.notifyDataSetChanged(); // Thông báo cho adapter biết dữ liệu đã thay đổi
         adapter = new SachAdapter(this,0,docSachArrayList);
         gdvDSSach.setAdapter(adapter);
 
