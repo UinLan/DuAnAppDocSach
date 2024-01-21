@@ -12,14 +12,20 @@ import android.widget.TextView;
 
 import com.example.duanappdocsach.R;
 import com.example.duanappdocsach.objec.adapter.SachAdapter;
+import com.example.duanappdocsach.objec.api.ApiLayDetailSach;
+import com.example.duanappdocsach.objec.interfaces.LayDetailSachVe;
 import com.example.duanappdocsach.objec.objec.Sach;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class DocSachActivity extends AppCompatActivity {
+public class DocSachActivity extends AppCompatActivity implements LayDetailSachVe {
 TextView tvSachDetail,txvSoTrang;
 ArrayList<String> arrSachDetail = new ArrayList<>();
 int soTrang,soTrangDangDoc;
+String idChuong;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,24 +34,20 @@ int soTrang,soTrangDangDoc;
     anhXa();
     setUp();
     setClick();
+    new ApiLayDetailSach(this,idChuong).execute();
 }
     //@SuppressLint("SuspiciousIndentation")
     private void  init(){
-        arrSachDetail = new ArrayList<>();
-        arrSachDetail.add("Chúng tôi đi xuống phố, tay trong tay, chẳng có gì phải vội. Totoca đang dạy tôi về cuộc sống. ");
-        arrSachDetail.add("Và điều đó khiến tôi thực sự hạnh phúc, được anh trai nắm tay và dạy nhiều điều.");
-        arrSachDetail.add("Nhưng là dạy về những điều thuộc thế giới bên ngoài. Bởi vì nhà, tôi học hỏi bằng cách tự mày mò khám phá và tự làm,");
-        arrSachDetail.add("tôi mắc lỗi nhiều và vì mắc lỗi, tôi thường bị ăn đòn.");
 
-    soTrangDangDoc = 1;
-    soTrang = arrSachDetail.size();
+        Bundle b = getIntent().getBundleExtra("data");
+        idChuong= b.getString("idChuong");
     }
     private void  anhXa(){
         tvSachDetail = findViewById(R.id.tvSachDetail);
         txvSoTrang = findViewById(R.id.txvSoTrang);
     }
     private void  setUp(){
-    docTheoTrang(0);
+    //docTheoTrang(0);
     }
     private void  setClick(){
 
@@ -68,5 +70,33 @@ int soTrang,soTrangDangDoc;
         }
         txvSoTrang.setText(soTrangDangDoc+"/"+soTrang);
         tvSachDetail.setText(arrSachDetail.get(soTrangDangDoc - 1));
+    }
+
+    @Override
+    public void batDau() {
+
+    }
+
+    @Override
+    public void ketThuc(String data) {
+        arrSachDetail = new ArrayList<>();
+        try{
+            JSONArray arr = new JSONArray(data);
+            for(int i=0;i<arr.length();i++){
+                arrSachDetail.add(arr.getString(i));
+            }
+            soTrangDangDoc = 1;
+            soTrang = arrSachDetail.size();
+            docTheoTrang(0);
+        }catch (JSONException e){
+
+        }
+
+
+    }
+
+    @Override
+    public void biLoi() {
+
     }
 }

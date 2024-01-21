@@ -5,10 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".objec.DocSachActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <TextView
     android:id="@+id/tvSachDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
+    </ScrollView>
     <ImageView
         android:onClick="left"
         android:background="@drawable/bg_left"

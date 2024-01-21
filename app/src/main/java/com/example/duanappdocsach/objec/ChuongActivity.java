@@ -67,7 +67,11 @@ ChuongSachAdapter chuongSachAdapter;
         lsvDanhSachChuong.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            startActivity(new Intent(ChuongActivity.this,DocSachActivity.class));
+                Bundle b = new Bundle();
+                b.putString("idChuong",arrChuong.get(i).getId());
+                Intent intent = new Intent(ChuongActivity.this,DocSachActivity.class);
+                intent.putExtra("data",b);
+                startActivity(intent);
             }
         });
     }
