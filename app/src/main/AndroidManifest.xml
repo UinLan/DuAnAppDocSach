@@ -18,6 +18,9 @@
             android:name=".objec.MainActivity"
             android:exported="false" />
         <activity
+            android:name=".objec.DocSachActivity"
+            android:exported="false" />
+        <activity
             android:name=".objec.ChuongActivity"
             android:exported="false" />
         <activity

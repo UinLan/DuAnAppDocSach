@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -17,6 +18,7 @@ import com.example.duanappdocsach.objec.fragment.canhan;
 import com.example.duanappdocsach.objec.fragment.dangxuat;
 import com.example.duanappdocsach.objec.fragment.mucyeuthich;
 import com.example.duanappdocsach.objec.fragment.nguoidung;
+import com.example.duanappdocsach.objec.MainActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class Navigation_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +26,8 @@ public class Navigation_Activity extends AppCompatActivity implements Navigation
     private  static final int FRAGMENT_MUCYEUTHICH = 1;
     private  static final int FRAGMENT_CANHAN = 2;
     private  static final int FRAGMENT_DANGXUAT = 3;
+    private  static final int MAIN = 4;
+
     private int mCurrentFragment = FRAGMENT_NGUOIDUNG;
 
     private DrawerLayout mDrawerLayout;
@@ -68,6 +72,13 @@ public class Navigation_Activity extends AppCompatActivity implements Navigation
             if (mCurrentFragment != FRAGMENT_CANHAN){
                 replaceFragment(new canhan());
                 mCurrentFragment = FRAGMENT_CANHAN;
+            }
+        } else if (id == R.id.nav_home) {
+            // Khi người dùng chọn mục "home"
+            if (mCurrentFragment != MAIN) {
+                // Thay đổi fragment hiện tại thành MainActivity
+                startActivity(new Intent(Navigation_Activity.this, MainActivity.class));
+                mCurrentFragment = MAIN;
             }
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
