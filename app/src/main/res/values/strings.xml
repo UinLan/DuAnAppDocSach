@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">DuAnAppDocSach</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_nguoidung">Thông tin Người Dùng</string>
+
+    <string name="nav_mucuathich">Mục Ưa Thích</string>
+
+    <string name="app_account">Account</string>
+
+
+    <string name="app_taikhoanvabaomat">Tài Khoản và bảo mật</string>
+
+    <string name="app_dangxuat">Đăng Xuất</string>
+    <string name="navigation_drawer_open">open navigation</string>
+
+    <string name="navigation_drawer_close">close navigation</string>
 </resources>
