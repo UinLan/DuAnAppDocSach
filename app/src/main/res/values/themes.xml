@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DuAnAppDocSach" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.DuAnAppDocSach" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
+    <style name="Theme.Navigation" parent="Base.Theme.Navigation" />
     <style name="Theme.DuAnAppDocSach" parent="Base.Theme.DuAnAppDocSach" />
 </resources>
