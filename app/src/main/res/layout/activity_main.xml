@@ -1,47 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layout"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".objec.Navigation_Activity">
-
-    <RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:openDrawer="start">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:background="#363f44"
-        tools:ignore="MissingConstraints">
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:padding="15dp"
-            android:src="@drawable/update"
-            app:tint="#fff"
-            android:layout_alignParentRight="true"
-            android:onClick="update"/>
-        <EditText
-            android:id="@+id/edtTimKiem"
-            android:background="@drawable/bg_edt"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".objec.MainActivity">
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginLeft="80dp"
-            android:hint="Nhập tên sách cần tìm"
-            android:textColorHint="#B3ADAD"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textColor="#fff">
-        </EditText>
-    </RelativeLayout>
-<GridView
-    android:id="@+id/gdvDSSach"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:numColumns="2"
-    android:layout_marginTop="5dp" ></GridView>
-</LinearLayout>
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorAccent"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:id="@+id/toolbarMain"/>
+        </com.google.android.material.appbar.AppBarLayout>
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:background="#363f44"
+                tools:ignore="MissingConstraints">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:src="@drawable/update"
+                    app:tint="#fff"
+                    android:layout_alignParentRight="true"
+                    android:onClick="update"/>
+                <EditText
+                    android:id="@+id/edtTimKiem"
+                    android:background="@drawable/bg_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:hint="Nhập tên sách cần tìm"
+                    android:textColorHint="#B3ADAD"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="#fff">
+                </EditText>
+            </RelativeLayout>
+            <GridView
+                android:id="@+id/gdvDSSach"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="2"
+                android:layout_marginTop="55dp" ></GridView>
+        </FrameLayout>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/navigation_view"
+        app:headerLayout="@layout/layout_header_navigation"
+        app:menu="@menu/menu_navigation"/>
+</androidx.drawerlayout.widget.DrawerLayout>

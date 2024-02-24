@@ -21,5 +21,4 @@
                 android:icon="@drawable/dangxuat_logout"/>
         </menu>
     </item>
-
 </menu>
