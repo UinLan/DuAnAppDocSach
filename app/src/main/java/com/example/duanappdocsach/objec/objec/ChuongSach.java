@@ -3,10 +3,11 @@ package com.example.duanappdocsach.objec.objec;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ChuongSach {
+import java.io.Serializable;
+
+public class ChuongSach implements Serializable {
     private String tenChuong,ngayDang,id;
     public ChuongSach(){
-
     }
     public String getTenChuong() {
         return tenChuong;

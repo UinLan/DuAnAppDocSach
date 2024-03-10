@@ -8,12 +8,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.duanappdocsach.R;
 import com.example.duanappdocsach.objec.adapter.SachAdapter;
 import com.example.duanappdocsach.objec.api.ApiLayDetailSach;
 import com.example.duanappdocsach.objec.interfaces.LayDetailSachVe;
+import com.example.duanappdocsach.objec.objec.ChuongSach;
 import com.example.duanappdocsach.objec.objec.Sach;
 
 import org.json.JSONArray;
@@ -22,14 +24,25 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 public class DocSachActivity extends AppCompatActivity implements LayDetailSachVe {
-TextView tvSachDetail,txvSoTrang;
+TextView tvSachDetail,txvSoTrang,textViewNote;
 ArrayList<String> arrSachDetail = new ArrayList<>();
 int soTrang,soTrangDangDoc;
 String idChuong;
+Button btnGhiChu;
+
+    Sach docSach;
+    ArrayList<ChuongSach> arrChuong;
+    TextView readTitleTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_sach);
+        String tenSach = getIntent().getStringExtra("TEN_SACH");
+        TextView bookTitleTextView = findViewById(R.id.tenSachDocSach);
+        bookTitleTextView.setText(tenSach);
+        String tenChuong = getIntent().getStringExtra("TEN_CHUONG");
+        TextView readTitleTextView = findViewById(R.id.tenChuongDocSach);
+        readTitleTextView.setText(tenChuong);
     init();
     anhXa();
     setUp();
@@ -38,19 +51,31 @@ String idChuong;
 }
     //@SuppressLint("SuspiciousIndentation")
     private void  init(){
-
         Bundle b = getIntent().getBundleExtra("data");
         idChuong= b.getString("idChuong");
+        docSach =(Sach) b.getSerializable("sach");
     }
     private void  anhXa(){
         tvSachDetail = findViewById(R.id.tvSachDetail);
         txvSoTrang = findViewById(R.id.txvSoTrang);
+        btnGhiChu = findViewById(R.id.btnGhiChu);
+        textViewNote = findViewById(R.id.textViewNote);
+        readTitleTextView = findViewById(R.id.tenChuongDocSach);
+        arrChuong = new ArrayList<>();
     }
     private void  setUp(){
     //docTheoTrang(0);
     }
     private void  setClick(){
-
+        btnGhiChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tenChuong = readTitleTextView.getText().toString();
+                Intent intent = new Intent(DocSachActivity.this, GhiChuActivity.class);
+                intent.putExtra("TEN_CHUONG", tenChuong);
+                startActivity(intent);
+            }
+        });
     }
 
     public void left(View view) {

@@ -15,10 +15,25 @@
         android:theme="@style/Theme.DuAnAppDocSach"
         tools:targetApi="31">
         <activity
+            android:name=".objec.PaidBillsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".objec.BanGoiXemSachActivity"
+            android:exported="false" />
+        <activity
+            android:name=".objec.DanhSachGhiChuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".objec.GhiChuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".objec.BinhLuanActivity"
+            android:exported="false" />
+        <activity
             android:name=".objec.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".objec.MainActivity"
+            android:name=".objec.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".objec.DocSachActivity"
@@ -27,7 +42,7 @@
             android:name=".objec.ChuongActivity"
             android:exported="false" />
         <activity
-            android:name=".objec.RegisterActivity"
+            android:name=".objec.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

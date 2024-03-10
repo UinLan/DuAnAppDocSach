@@ -37,6 +37,15 @@
                 android:background="#363f44"
                 tools:ignore="MissingConstraints">
                 <ImageView
+                    android:id="@+id/imgShopping"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:src="@drawable/shopping_cart"
+                    app:tint="#fff"
+                    android:layout_alignParentLeft="true"
+                    />
+                <ImageView
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:padding="15dp"

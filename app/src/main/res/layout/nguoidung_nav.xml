@@ -2,15 +2,151 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@android:color/holo_orange_dark">
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="44dp"
+        android:layout_height="38dp">
+
+        <ImageButton
+            android:id="@+id/BackButton"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/white"
+            android:scaleType="fitStart"
+            android:src="@drawable/left" />
+
+    </RelativeLayout>
+
+
     <TextView
+        android:id="@+id/tvTTCN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="50dp"
-        android:textColor="@android:color/black"
-        android:text="người dùng"/>
+        android:layout_margin="10dp"
+        android:text="Thông tin cá nhân"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/nguoidung_thaydoithongtin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/editbutton"
+        android:text=" Thay đổi thông tin "
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/draweble_edit">
+
+
+        <TextView
+            android:id="@+id/tvHoten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Họ và tên:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtHoten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="text"
+            android:text="  Nghĩa"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Email:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text=" Nghia@123"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvSdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Số điện thoại:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtSdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="phone"
+            android:text=" 0123456789"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvNgaysinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Ngày sinh:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtNgaysinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="date"
+            android:text=" 1/1/2011"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvNoisinhsong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Nơi sinh sống (Tỉnh/Thành phố):"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtNoisinhsong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            android:text=" Thành phố Hồ Chí Minh"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/idCapnhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editbutton"
+            android:text="  Cập nhật  "
+            android:textColor="@color/white"
+            android:textSize="16sp"></Button>
+    </LinearLayout>
 </LinearLayout>
