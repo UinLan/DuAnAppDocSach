@@ -2,10 +2,8 @@ package com.example.duanappdocsach.objec;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +33,7 @@ public class PaidBillsActivity extends AppCompatActivity {
         String buyerEmail = intent.getStringExtra("buyerEmail");
         String packageName = intent.getStringExtra("packageName");
         int price = intent.getIntExtra("price", 0);
+        String status = intent.getStringExtra("status");
         // Lấy danh sách hóa đơn đã thanh toán từ BillRepository
         paidBills = BillRepository.getInstance().getPaidBills();
         if (paidBills == null || paidBills.isEmpty()) {
@@ -42,7 +41,7 @@ public class PaidBillsActivity extends AppCompatActivity {
         }
         else if (buyerName != null && buyerPhoneNumber != null && buyerEmail != null && packageName != null && price != 0) {
             // Tạo hóa đơn mới và thêm vào danh sách
-            Bill bill = new Bill(buyerName, buyerPhoneNumber, buyerEmail, packageName, price);
+            Bill bill = new Bill(buyerName, buyerPhoneNumber, buyerEmail, packageName, price,status);
             BillRepository.getInstance().addBill(bill);
         }
         // Tạo adapter tùy chỉnh và gán cho ListView
@@ -50,4 +49,3 @@ public class PaidBillsActivity extends AppCompatActivity {
         listViewPaidBills.setAdapter(adapter);
     }
 }
-

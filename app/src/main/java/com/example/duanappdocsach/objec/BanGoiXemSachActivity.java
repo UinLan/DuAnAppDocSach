@@ -60,15 +60,15 @@ public class BanGoiXemSachActivity extends AppCompatActivity {
 
     private void muaGoiXemSachCoBan() {
         // Hiển thị dialog để nhập thông tin mua sách và thanh toán
-        showPurchaseDialog("Gói Xem Sách Cơ Bản (100 sách)", 29);
+        showPurchaseDialog("Gói Xem Sách Cơ Bản (100 sách)", 29, "Đã thanh toán");
     }
 
     private void muaGoiXemSachPremium() {
         // Hiển thị dialog để nhập thông tin mua sách và thanh toán
-        showPurchaseDialog("Gói Xem Sách Premium (200 sách)", 59);
+        showPurchaseDialog("Gói Xem Sách Premium (200 sách)", 59, "Đã thanh toán");
     }
 
-    private void showPurchaseDialog(String packageName, final int price) {
+    private void showPurchaseDialog(String packageName, final int price, final String status) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_payment_info, null);
@@ -102,7 +102,7 @@ public class BanGoiXemSachActivity extends AppCompatActivity {
 
                 // Xử lý thanh toán ở đây
                 // Tạo đối tượng Bill từ thông tin người mua
-                Bill bill = new Bill(buyerName, buyerPhoneNumber, buyerEmail, packageName, price);
+                Bill bill = new Bill(buyerName, buyerPhoneNumber, buyerEmail, packageName, price, status);
                 // Trong phương thức onClick của nút "Thanh toán"
                 BillRepository billRepository = BillRepository.getInstance();
                 billRepository.addBill(bill);
