@@ -7,37 +7,58 @@
     android:orientation="vertical"
     android:background="#fff"
     tools:context=".objec.ChuongActivity">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="230dp">
-    <ImageView
-        android:id="@+id/imgAnhSachs"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/a"
-        android:scaleType="centerCrop"
-        />
-    <TextView
-        android:id="@+id/txvTenSachs"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#88000000"
-        android:text="ten sach"
-        android:gravity="center"
-        android:textColor="#fff"
-        android:textSize="35sp"
-        android:padding="5dp"/>
-</RelativeLayout>
+        android:layout_height="300dp">
+        <ImageView
+            android:id="@+id/imgAnhSachs"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/a"
+            android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/txvTenSachs"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#88000000"
+            android:text="ten sach"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="35sp"
+            android:padding="5dp" />
+        <TextView
+            android:id="@+id/nameTomtat"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/imgAnhSachs"
+            android:text="Tóm Tắt: "
+            android:textColor="#000"
+            android:textSize="30sp"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/nameTomtat">
+        <TextView
+            android:id="@+id/txvTomTat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tom Tat"
+            android:textColor="#000"
+            android:layout_centerHorizontal="true"
+           />
+        </ScrollView>
+    </RelativeLayout>
     <Button
         android:id="@+id/btnBinhLuan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bình Luận"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
+
     <ListView
         android:id="@+id/lsvDanhSachChuong"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
