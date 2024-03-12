@@ -13,7 +13,8 @@
         android:text="Tên sách"
         android:textSize="24sp"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="10sp"/>
 
     <EditText
         android:id="@+id/comment_input"
@@ -32,7 +33,9 @@
         android:text="Gửi"
         android:layout_below="@id/comment_input"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_edt"/>
 
     <ListView
         android:id="@+id/comment_list"

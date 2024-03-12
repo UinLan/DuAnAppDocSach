@@ -20,23 +20,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/a" />
+            android:src="@drawable/caycamngot" />
 
     </RelativeLayout>
 
     <TextView
         android:id="@+id/txvTenSach"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="4dp"
-        android:background="#F9FF9A"
+        android:layout_height="100dp"
         android:gravity="center"
         android:text="Gió và tình yêu vẫn thổi"
         android:textColor="#000"
-        android:textSize="15sp"
+        android:textSize="17sp"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout5"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp"
-        android:padding="4dp"
+        android:textStyle="bold"
         />
 </LinearLayout>

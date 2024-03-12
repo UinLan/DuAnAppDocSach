@@ -37,9 +37,6 @@ Button btnGhiChu;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_sach);
-        String tenSach = getIntent().getStringExtra("TEN_SACH");
-        TextView bookTitleTextView = findViewById(R.id.tenSachDocSach);
-        bookTitleTextView.setText(tenSach);
         String tenChuong = getIntent().getStringExtra("TEN_CHUONG");
         TextView readTitleTextView = findViewById(R.id.tenChuongDocSach);
         readTitleTextView.setText(tenChuong);

@@ -9,13 +9,14 @@
     tools:context=".objec.ChuongActivity">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="200dp">
         <ImageView
             android:id="@+id/imgAnhSachs"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/a"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:layout_centerInParent="true"/>
         <TextView
             android:id="@+id/txvTenSachs"
             android:layout_width="match_parent"
@@ -26,18 +27,21 @@
             android:textColor="#fff"
             android:textSize="35sp"
             android:padding="5dp" />
-        <TextView
-            android:id="@+id/nameTomtat"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/imgAnhSachs"
-            android:text="Tóm Tắt: "
-            android:textColor="#000"
-            android:textSize="30sp"/>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/nameTomtat">
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/nameTomtat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/imgAnhSachs"
+        android:text="Tóm Tắt: "
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/nameTomtat">
         <TextView
             android:id="@+id/txvTomTat"
             android:layout_width="match_parent"
@@ -45,20 +49,25 @@
             android:text="Tom Tat"
             android:textColor="#000"
             android:layout_centerHorizontal="true"
-           />
-        </ScrollView>
-    </RelativeLayout>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            />
+    </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="115dp">
+    <ListView
+        android:id="@+id/lsvDanhSachChuong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
     <Button
         android:id="@+id/btnBinhLuan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bình Luận"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
-
-    <ListView
-        android:id="@+id/lsvDanhSachChuong"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+       android:layout_gravity="center"
+        android:background="@drawable/bg_edt"/>
 </LinearLayout>

@@ -10,33 +10,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buyer Name: "
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textViewBuyerPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buyer Phone Number: " />
+        android:text="Buyer Phone Number: "
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/textViewBuyerEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buyer Email: " />
+        android:text="Buyer Email: "
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/textViewPackageName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Package Name: " />
+        android:text="Package Name: "
+        android:textSize="15sp"/>
     <TextView
         android:id="@+id/textViewPrices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price: " />
+        android:text="Price: "
+        android:textSize="15sp"/>
     <TextView
         android:id="@+id/textViewStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status: " />
+        android:text="Status: "
+        android:textSize="15sp"/>
 </LinearLayout>

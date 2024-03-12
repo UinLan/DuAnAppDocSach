@@ -49,10 +49,14 @@
         android:id="@+id/buttonBuyPackage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mua gói xem sách"/>
+        android:text="Mua gói xem sách"
+        android:background="@drawable/bg_edt"
+        android:layout_marginTop="10dp"/>
     <Button
         android:id="@+id/buttonViewBillDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Xem chi tiết hóa đơn"/>
+        android:text="Xem chi tiết hóa đơn"
+        android:background="@drawable/bg_edt"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>
