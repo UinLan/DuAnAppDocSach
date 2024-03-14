@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.duanappdocsach.R;
@@ -42,11 +43,12 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
     SachAdapter adapter;
     ArrayList<Sach> docSachArrayList;
     EditText edtTimKiem;
+    ImageView imgShopping;
     private  static final int FRAGMENT_NGUOIDUNG = 0;
     private  static final int FRAGMENT_MUCYEUTHICH = 1;
     private  static final int FRAGMENT_CANHAN = 2;
     private  static final int FRAGMENT_DANGXUAT = 3;
-    private int mCurrentFragment = 1;
+    private int mCurrentFragment = -1;
 
     private DrawerLayout mDrawerLayout;
     @Override
@@ -126,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
 
         gdvDSSach = findViewById(R.id.gdvDSSach);
         edtTimKiem = findViewById(R.id.edtTimKiem);
+        imgShopping = findViewById(R.id.imgShopping);
 
     }
     private void  setUp(){
@@ -157,6 +160,13 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
                 b.putSerializable("sach",docsach);
                 Intent intent = new Intent(MainActivity.this,ChuongActivity.class);
                 intent.putExtra("data",b);
+                startActivity(intent);
+            }
+        });
+        imgShopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,BanGoiXemSachActivity.class);
                 startActivity(intent);
             }
         });

@@ -3,14 +3,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@android:color/holo_blue_bright">
+    android:background="@color/gray">
+    <RelativeLayout
+        android:layout_width="44dp"
+        android:layout_height="38dp">
+
+        <ImageButton
+            android:id="@+id/Canhan_BackButton"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:backgroundTint="@color/white"
+            android:scaleType="fitStart"
+            android:src="@drawable/baseline_keyboard_arrow_left_24" />
+
+    </RelativeLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textColor="@android:color/black"
-        android:text="Tài Khoản Và Bảo Mật"/>
+        android:text="Mật Khẩu và bảo mật"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập và khôi phục"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Quản lý mật khẩu, tùy chọn đăng nhập và phương thức khôi phục."/>
 
+    <Button
+        android:id="@+id/button_PassWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/draweble_edit"
+        android:text="  Đổi mật khẩu   "
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Kiểm tra bảo mật"
+        android:layout_marginTop="20dp"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:text="Xem xét các vấn đề bảo mật bằng cách chạy quy trình kiểm tra trên các ứng dụng, thiết bị và email đã gửi."/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:background="@drawable/draweble_edit"
+        android:text=" Kiểm tra bảo mật "/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text=" Đoạn chat mã hóa đầu cuối"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:text="        Quản lý cài đặt đoạn chat mã hóa đầu cuối."/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="  Cảnh báo bảo mất"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/draweble_edit"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="  Bộ nhớ an toàn "
+        android:layout_marginTop="5dp"
+        android:background="@drawable/draweble_edit"/>
 </LinearLayout>

@@ -2,7 +2,8 @@ package com.example.duanappdocsach.objec.api;
 
 import android.os.AsyncTask;
 
-import com.example.duanappdocsach.objec.interfaces.LaySachVe;
+import com.example.duanappdocsach.objec.interfaces.LayChuongVe;
+import com.example.duanappdocsach.objec.interfaces.LayTomTatVe;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -10,21 +11,22 @@ import com.squareup.okhttp.ResponseBody;
 
 import java.io.IOException;
 
-public class ApiLaySach extends AsyncTask<Void,Void,Void> {
+public class ApiTomTatSach extends AsyncTask<Void,Void,Void> {
     String data;
-
-    public ApiLaySach(LaySachVe laySachVe) {
-        this.laySachVe = laySachVe;
-        this.laySachVe.batDau();
+    LayTomTatVe layTomTatVe;
+    String idSach;
+    public ApiTomTatSach(LayTomTatVe layTomTatVe, String idSach) {
+        this.layTomTatVe = layTomTatVe;
+        this.layTomTatVe.batDau();
+        this.idSach = idSach;
     }
 
-    LaySachVe laySachVe;
+
     @Override
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                //.url(" http://192.168.1.16:3000/books")
-                .url(" https://uinlan.000webhostapp.com/laySach.php")
+                .url("https://uinlan.000webhostapp.com/LayTomTat.php?id="+idSach)
                 .build();
         data = null;
         try
@@ -42,11 +44,11 @@ public class ApiLaySach extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
    if(data == null)
    {
-       this.laySachVe.biLoi();
+       this.layTomTatVe.biLoi();
    }
    else
    {
-       this.laySachVe.ketThuc(data);
+       this.layTomTatVe.ketThuc(data);
    }
     }
 }

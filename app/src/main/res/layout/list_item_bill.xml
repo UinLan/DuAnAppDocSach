@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewBuyerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buyer Name: "
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textViewBuyerPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buyer Phone Number: "
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/textViewBuyerEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buyer Email: "
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/textViewPackageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Package Name: "
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/textViewPrices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: "
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: "
+        android:textSize="15sp"/>
+</LinearLayout>

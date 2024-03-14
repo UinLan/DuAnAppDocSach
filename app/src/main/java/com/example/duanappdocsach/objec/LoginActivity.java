@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.duanappdocsach.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } else if (pass.length() < 8) {
                     loginPassword.setError("Password must be at least 8 characters long");
-                } else if (email.isEmpty()) {
+} else if (email.isEmpty()) {
                     loginEmail.setError("Email cannot be empty");
                 } else {
                     loginEmail.setError("Please enter valid email");

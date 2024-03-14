@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".objec.BinhLuanActivity"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên sách"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="10sp"/>
+
+    <EditText
+        android:id="@+id/comment_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập bình luận"
+        android:layout_below="@id/book_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <Button
+        android:id="@+id/submit_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi"
+        android:layout_below="@id/comment_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_edt"/>
+
+    <ListView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submit_comment"
+        android:layout_marginTop="16dp"
+        android:divider="@null"/>
+
+</LinearLayout>

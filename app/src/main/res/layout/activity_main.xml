@@ -34,16 +34,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:gravity="center"
-                android:background="#363f44"
+                android:background="#fff"
                 tools:ignore="MissingConstraints">
+                <ImageView
+                    android:id="@+id/imgShopping"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:src="@drawable/shopping_cart"
+                    app:tint="#2196F3"
+                    android:layout_alignParentLeft="true"
+                    />
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:padding="15dp"
                     android:src="@drawable/update"
-                    app:tint="#fff"
+                    app:tint="#2196F3"
                     android:layout_alignParentRight="true"
-                    android:onClick="update"/>
+                    android:onClick="update"
+                    />
                 <EditText
                     android:id="@+id/edtTimKiem"
                     android:background="@drawable/bg_edt"
@@ -54,10 +64,11 @@
                     android:layout_marginRight="80dp"
                     android:layout_marginLeft="80dp"
                     android:hint="Nhập tên sách cần tìm"
-                    android:textColorHint="#B3ADAD"
+                    android:textColorHint="#938C8C"
                     android:textSize="20sp"
                     android:gravity="center"
-                    android:textColor="#fff">
+                    android:textColor="#000"
+                    >
                 </EditText>
             </RelativeLayout>
             <GridView
