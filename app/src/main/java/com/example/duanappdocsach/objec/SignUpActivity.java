@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.duanappdocsach.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -43,9 +44,10 @@ public class SignUpActivity extends AppCompatActivity {
                     signupEmail.setError("Email cannot be empty");
                 }
                 if (pass.isEmpty()){
-                    signupEmail.setError("Password cannot be empty");
-                } else if (pass.length()<8) {
-                    signupEmail.setError("Password must be at least 8 characters long");
+                    signupPassword.setError("Password cannot be empty");
+                }
+                else if (pass.length()<8) {
+                    signupPassword.setError("Password must be at least 8 characters long");
                 } else {
                     auth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

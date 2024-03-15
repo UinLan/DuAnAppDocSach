@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:id="@+id/toolbarNguoiDung">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbarNguoiDung"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:background="?attr/colorBackgroundFloating"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/baseline_keyboard_arrow_left_24"
+        app:navigationIconTint="@color/green"
+        app:title=" "
+        app:titleCentered="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Thông tin cá nhân"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvHoten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Họ và tên:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtHoten"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:hint=" Họ tên... "
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="20dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Email:"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:hint=" @gmail..."
+            android:layout_height="37dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textSize="20dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvSdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Số điện thoại:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtSdt"
+            android:hint="  Phone..."
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="phone"
+            android:textSize="20dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvNgaysinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Ngày sinh:"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtNgaysinh"
+            android:layout_width="match_parent"
+            android:hint="  Ngày.../tháng.../năm..."
+            android:layout_height="36dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="date"
+            android:textSize="20dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tvNoisinhsong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Nơi sinh sống (Tỉnh/Thành phố):"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edtNoisinhsong"
+            android:hint="Tỉnh.../Thành phố..."
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:text="  Update  "
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="125dp"
+        android:textSize="16dp"
+        app:backgroundTint="@null" />
+
+
+</LinearLayout>

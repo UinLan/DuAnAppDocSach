@@ -19,18 +19,22 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duanappdocsach.R;
 import com.example.duanappdocsach.objec.adapter.SachAdapter;
 import com.example.duanappdocsach.objec.api.ApiLaySach;
-import com.example.duanappdocsach.objec.fragment.canhan;
+import com.example.duanappdocsach.objec.fragment.CaNhanActivity;
 import com.example.duanappdocsach.objec.fragment.dangxuat;
 import com.example.duanappdocsach.objec.fragment.mucyeuthich;
 import com.example.duanappdocsach.objec.fragment.nguoidung;
 import com.example.duanappdocsach.objec.interfaces.LaySachVe;
 import com.example.duanappdocsach.objec.objec.Sach;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -81,10 +85,8 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
             startActivity(intent);
             finish();
         } else if (id == R.id.nav_nguoidung) {
-            if (mCurrentFragment != FRAGMENT_NGUOIDUNG){
-                replaceFragment(new nguoidung());
-                mCurrentFragment = FRAGMENT_NGUOIDUNG;
-            }
+            Intent i = new Intent(MainActivity.this, nguoidung.class);
+            startActivity(i);
         } else if (id == R.id.nav_dangxuat) {
             if (mCurrentFragment != FRAGMENT_DANGXUAT){
                 replaceFragment(new dangxuat());
@@ -96,11 +98,8 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
                 mCurrentFragment = FRAGMENT_MUCYEUTHICH;
             }
         } else if (id == R.id.nav_taikhoanvabaomat) {
-            if (mCurrentFragment != FRAGMENT_CANHAN){
-                replaceFragment(new canhan());
-                mCurrentFragment = FRAGMENT_CANHAN;
-            }
-
+            Intent i = new Intent(MainActivity.this, CaNhanActivity.class);
+            startActivity(i);
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -121,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
     //@SuppressLint("SuspiciousIndentation")
     private void  init(){
         docSachArrayList = new ArrayList<>();
-
         adapter = new SachAdapter(this,0,docSachArrayList);
     }
     private void  anhXa(){

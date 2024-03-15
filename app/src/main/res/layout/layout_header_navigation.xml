@@ -12,6 +12,7 @@
         android:src="@mipmap/ic_launcher"/>
 
     <TextView
+        android:id="@+id/txvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TrongNghia"
@@ -20,11 +21,11 @@
         android:textStyle="bold"
         android:layout_marginTop="8dp"/>
     <TextView
+        android:id="@+id/txvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trongnghiahm123@gmail.com"
+        android:text="U mee sach"
         android:textSize="18sp"
         android:textColor="@color/white"
         />
-
 </LinearLayout>
