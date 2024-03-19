@@ -10,7 +10,7 @@
 
 
     <string name="app_taikhoanvabaomat">Tài Khoản và bảo mật</string>
-
+    <string name="app_dangnhap">Đăng Nhập</string>
     <string name="app_dangxuat">Đăng Xuất</string>
     <string name="navigation_drawer_open">open navigation</string>
 
