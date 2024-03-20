@@ -26,6 +26,7 @@ import com.example.duanappdocsach.R;
 import com.example.duanappdocsach.objec.adapter.SachAdapter;
 import com.example.duanappdocsach.objec.api.ApiLaySach;
 import com.example.duanappdocsach.objec.fragment.CaNhanActivity;
+import com.example.duanappdocsach.objec.fragment.DoiMatKhauActivity;
 import com.example.duanappdocsach.objec.fragment.dangxuat;
 import com.example.duanappdocsach.objec.fragment.mucyeuthich;
 import com.example.duanappdocsach.objec.fragment.nguoidung;
@@ -88,10 +89,11 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
             Intent i = new Intent(MainActivity.this, nguoidung.class);
             startActivity(i);
         } else if (id == R.id.nav_dangxuat) {
-            if (mCurrentFragment != FRAGMENT_DANGXUAT){
-                replaceFragment(new dangxuat());
-                mCurrentFragment = FRAGMENT_DANGXUAT;
-            }
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class); // LoginActivity là Activity bạn muốn chuyển đến sau khi đăng xuất
+            startActivity(intent);
+            finish(); // Kết thúc MainActivity
+
         } else if (id == R.id.nav_mucuathich) {
             if (mCurrentFragment != FRAGMENT_MUCYEUTHICH){
                 replaceFragment(new mucyeuthich());
@@ -100,6 +102,11 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
         } else if (id == R.id.nav_taikhoanvabaomat) {
             Intent i = new Intent(MainActivity.this, CaNhanActivity.class);
             startActivity(i);
+        }else if (id == R.id.nav_doi_mat_khau) {
+            // Chuyển đến Activity hoặc Fragment cho việc đổi mật khẩu
+            // Ví dụ:
+            Intent intent = new Intent(MainActivity.this, DoiMatKhauActivity.class);
+            startActivity(intent);
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
