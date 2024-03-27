@@ -4,17 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.duanappdocsach.R;
-import com.example.duanappdocsach.objec.adapter.SachAdapter;
-import com.example.duanappdocsach.objec.api.ApiLayDetailSach;
-import com.example.duanappdocsach.objec.interfaces.LayDetailSachVe;
+import com.example.duanappdocsach.objec.fragment.api.ApiLayDetailSach;
+import com.example.duanappdocsach.objec.objec.interfaces.LayDetailSachVe;
 import com.example.duanappdocsach.objec.objec.ChuongSach;
 import com.example.duanappdocsach.objec.objec.Sach;
 

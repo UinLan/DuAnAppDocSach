@@ -16,9 +16,6 @@
     </group>
     <item android:title="@string/app_account">
         <menu>
-            <item android:id="@+id/nav_dangnhap"
-                android:title="@string/app_dangnhap"
-                android:icon="@drawable/dangxuat_logout"/>
             <item android:id="@+id/nav_dangxuat"
                 android:title="@string/app_dangxuat"
                 android:icon="@drawable/dangxuat_logout"/>

@@ -1,9 +1,8 @@
-package com.example.duanappdocsach.objec.api;
+package com.example.duanappdocsach.objec.fragment.api;
 
 import android.os.AsyncTask;
 
-import com.example.duanappdocsach.objec.interfaces.LayDetailSachVe;
-import com.example.duanappdocsach.objec.interfaces.LaySachVe;
+import com.example.duanappdocsach.objec.objec.interfaces.LayTomTatVe;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -11,14 +10,14 @@ import com.squareup.okhttp.ResponseBody;
 
 import java.io.IOException;
 
-public class ApiLayDetailSach extends AsyncTask<Void,Void,Void> {
+public class ApiTomTatSach extends AsyncTask<Void,Void,Void> {
     String data;
-    String idChuong;
-    LayDetailSachVe layDetailSachVe;
-    public ApiLayDetailSach(LayDetailSachVe layDetailSachVe, String idChuong) {
-        this.layDetailSachVe = layDetailSachVe;
-        this.idChuong = idChuong;
-        this.layDetailSachVe.batDau();
+    LayTomTatVe layTomTatVe;
+    String idSach;
+    public ApiTomTatSach(LayTomTatVe layTomTatVe, String idSach) {
+        this.layTomTatVe = layTomTatVe;
+        this.layTomTatVe.batDau();
+        this.idSach = idSach;
     }
 
 
@@ -26,10 +25,7 @@ public class ApiLayDetailSach extends AsyncTask<Void,Void,Void> {
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(" https://uinlan.000webhostapp.com/layDetail.php?idChuong="+idChuong)
-
-
-
+                .url("https://uinlan.000webhostapp.com/LayTomTat.php?id="+idSach)
                 .build();
         data = null;
         try
@@ -47,11 +43,11 @@ public class ApiLayDetailSach extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
    if(data == null)
    {
-       this.layDetailSachVe.biLoi();
+       this.layTomTatVe.biLoi();
    }
    else
    {
-       this.layDetailSachVe.ketThuc(data);
+       this.layTomTatVe.ketThuc(data);
    }
     }
 }

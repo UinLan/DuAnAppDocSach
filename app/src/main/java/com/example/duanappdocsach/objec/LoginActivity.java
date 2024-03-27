@@ -3,6 +3,7 @@ package com.example.duanappdocsach.objec;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -17,7 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
+import android.content.SharedPreferences;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

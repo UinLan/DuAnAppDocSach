@@ -1,8 +1,8 @@
-package com.example.duanappdocsach.objec.api;
+package com.example.duanappdocsach.objec.fragment.api;
 
 import android.os.AsyncTask;
 
-import com.example.duanappdocsach.objec.interfaces.LaySachVe;
+import com.example.duanappdocsach.objec.objec.interfaces.LaySachVe;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;

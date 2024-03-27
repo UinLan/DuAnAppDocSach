@@ -19,21 +19,17 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.duanappdocsach.R;
 import com.example.duanappdocsach.objec.adapter.SachAdapter;
-import com.example.duanappdocsach.objec.api.ApiLaySach;
+import com.example.duanappdocsach.objec.fragment.api.ApiLaySach;
 import com.example.duanappdocsach.objec.fragment.CaNhanActivity;
 import com.example.duanappdocsach.objec.fragment.DoiMatKhauActivity;
-import com.example.duanappdocsach.objec.fragment.dangxuat;
-import com.example.duanappdocsach.objec.fragment.mucyeuthich;
+import com.example.duanappdocsach.objec.fragment.Add_Favorite;
 import com.example.duanappdocsach.objec.fragment.nguoidung;
-import com.example.duanappdocsach.objec.interfaces.LaySachVe;
+import com.example.duanappdocsach.objec.objec.interfaces.LaySachVe;
 import com.example.duanappdocsach.objec.objec.Sach;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -95,10 +91,9 @@ public class MainActivity extends AppCompatActivity implements LaySachVe, Naviga
             finish(); // Kết thúc MainActivity
 
         } else if (id == R.id.nav_mucuathich) {
-            if (mCurrentFragment != FRAGMENT_MUCYEUTHICH){
-                replaceFragment(new mucyeuthich());
-                mCurrentFragment = FRAGMENT_MUCYEUTHICH;
-            }
+            Intent intent = new Intent(MainActivity.this, Add_Favorite.class); // LoginActivity là Activity bạn muốn chuyển đến sau khi đăng xuất
+            startActivity(intent);
+            finish(); // Kết thúc MainActivity
         } else if (id == R.id.nav_taikhoanvabaomat) {
             Intent i = new Intent(MainActivity.this, CaNhanActivity.class);
             startActivity(i);

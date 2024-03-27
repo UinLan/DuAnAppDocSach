@@ -1,9 +1,8 @@
-package com.example.duanappdocsach.objec.api;
+package com.example.duanappdocsach.objec.fragment.api;
 
 import android.os.AsyncTask;
 
-import com.example.duanappdocsach.objec.interfaces.LayChuongVe;
-import com.example.duanappdocsach.objec.interfaces.LayTomTatVe;
+import com.example.duanappdocsach.objec.objec.interfaces.LayChuongVe;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -11,13 +10,13 @@ import com.squareup.okhttp.ResponseBody;
 
 import java.io.IOException;
 
-public class ApiTomTatSach extends AsyncTask<Void,Void,Void> {
+public class ApiChuongSach extends AsyncTask<Void,Void,Void> {
     String data;
-    LayTomTatVe layTomTatVe;
+    LayChuongVe layChuongVe;
     String idSach;
-    public ApiTomTatSach(LayTomTatVe layTomTatVe, String idSach) {
-        this.layTomTatVe = layTomTatVe;
-        this.layTomTatVe.batDau();
+    public ApiChuongSach(LayChuongVe layChuongVe, String idSach) {
+        this.layChuongVe = layChuongVe;
+        this.layChuongVe.batDau();
         this.idSach = idSach;
     }
 
@@ -26,7 +25,7 @@ public class ApiTomTatSach extends AsyncTask<Void,Void,Void> {
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("https://uinlan.000webhostapp.com/LayTomTat.php?id="+idSach)
+                .url("https://uinlan.000webhostapp.com/layChuong.php?id="+idSach)
                 .build();
         data = null;
         try
@@ -44,11 +43,11 @@ public class ApiTomTatSach extends AsyncTask<Void,Void,Void> {
     protected void onPostExecute(Void aVoid) {
    if(data == null)
    {
-       this.layTomTatVe.biLoi();
+       this.layChuongVe.biLoi();
    }
    else
    {
-       this.layTomTatVe.ketThuc(data);
+       this.layChuongVe.ketThuc(data);
    }
     }
 }

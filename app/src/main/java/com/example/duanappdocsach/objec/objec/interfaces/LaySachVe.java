@@ -1,4 +1,4 @@
-package com.example.duanappdocsach.objec.interfaces;
+package com.example.duanappdocsach.objec.objec.interfaces;
 
 public interface LaySachVe {
     void batDau();
